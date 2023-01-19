@@ -29,11 +29,7 @@
 				</span>
 
 				<div class="topbar-child2">
-					<span class="topbar-email">
-						<a href="https://github.com/zinmyoswe">
-						overmidnight12@gmail.com
-					    </a>
-					</span>
+			
 
 					<div class="topbar-language rs1-select2">
 						<select class="selection-1" name="time">
@@ -46,9 +42,9 @@
 
 			<div class="wrap_header">
 				<!-- Logo -->
-				<a href="/" class="logo">
+				{% comment %} <a href="/" class="logo">
 					<p style="color: black; "><b style="font-size: 22px;">D</b>JANGO SHOP</p>
-				</a>
+				</a> {% endcomment %}
 
 				<!-- Menu -->
 				<div class="wrap_menu">
@@ -60,24 +56,24 @@
 							</li>
 
 							<li>
-								<a href="/shop/">Shop</a>
+								<a href="/shop/">Tienda</a>
 							</li>
 
 							{% categories %}
 
 							{% if request.user.is_authenticated %}
 							<li>
-								<a href="{% url 'core:order-summary' %}">Cart<span class="badge badge-dark">{{ request.user|cart_item_count }}</span></a>
+								<a href="{% url 'core:order-summary' %}">Carrito<span class="badge badge-dark">{{ request.user|cart_item_count }}</span></a>
 							</li>
 							<li>
-								<a href="{% url 'account_logout' %}">Logout</a>
+								<a href="{% url 'account_logout' %}">Salir</a>
 							</li>
 							{% else %}
 							<li>
 								<a href="#">Login</a>
 								<ul class="sub_menu">
-									<li><a href="{% url 'account_login' %}">Login</a></li>
-									<li><a href="{% url 'account_signup' %}">SignUp</a></li>
+									<li><a href="{% url 'account_login' %}">Entrar</a></li>
+									<li><a href="{% url 'account_signup' %}">Registrarse</a></li>
 								</ul>
 							</li>
 							{% endif %}

@@ -6,21 +6,21 @@ from django_countries.fields import CountryField
 
 # Create your models here.
 CATEGORY_CHOICES = (
-    ('SB', 'Shirts And Blouses'),
-    ('TS', 'T-Shirts'),
-    ('SK', 'Skirts'),
-    ('HS', 'Hoodies&Sweatshirts')
+    ('PA', 'Pintura Acrilica'),
+    ('PO', 'Pintura Oleo'),
+    ('PS', 'Pinceles Sinteticos'),
+    ('PN', 'Pinceles Naturales')
 )
 
 LABEL_CHOICES = (
-    ('S', 'sale'),
-    ('N', 'new'),
-    ('P', 'promotion')
+    ('V', 'venta'),
+    ('N', 'nuevo'),
+    ('P', 'promocion')
 )
 
 ADDRESS_CHOICES = (
-    ('B', 'Billing'),
-    ('S', 'Shipping'),
+    ('F', 'Facturacion'),
+    ('E', 'Envio'),
 )
 
 
@@ -129,13 +129,13 @@ class Order(models.Model):
     refund_granted = models.BooleanField(default=False)
 
     '''
-    1. Item added to cart
-    2. Adding a BillingAddress
-    (Failed Checkout)
-    3. Payment
-    4. Being delivered
-    5. Received
-    6. Refunds
+    1. Anadir al carrito
+    2. Anadir direccion de pago
+    (Fallo en la verificacion)
+    3. Pago
+    4. Entrega en porceso
+    5. Recibido
+    6. Reembolso
     '''
 
     def __str__(self):
